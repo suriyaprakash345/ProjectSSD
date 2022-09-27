@@ -11,4 +11,9 @@ export class AppService {
   loign(userDetails:object) {
     return this.httpClient.post("http://localhost:3001/loginData",{userDetails})
   }
+
+  register(userDeatils:object) {
+    return this.httpClient.post("http://lo")
+  }
+
 }

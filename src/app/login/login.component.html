@@ -16,19 +16,19 @@
                 <div>
                     <div><label for="input">Name</label>
                     </div>
-                    <div><input type="text" placeholder="Enter Your Name" class="pad">
+                    <div><input type="text" [(ngModel)]="name" placeholder="Enter Your Name" class="pad">
                     </div>
-                    <div><label for="input">Mobile Number</label>
+                    <div><label for="input" >Mobile Number</label>
                     </div>
-                    <div><input type="text" placeholder="Enter Your Name" class="pad">
+                    <div><input type="text" [(ngModel)]="mobile" placeholder="Enter Your Name" class="pad">
                     </div>
-                    <div><label for="input">Email</label>
+                    <div><label for="input" >Email</label>
                     </div>
-                    <div><input type="text" placeholder="Enter Your Email" class="pad">
+                    <div><input type="text" [(ngModel)]="email" placeholder="Enter Your Email" class="pad">
                     </div>
-                    <div><input type="button" value="SUBMIT" id="button">
+                    <div><input type="button" value="SUBMIT" (click)="register()" id="button">
                     </div>
-                    <div><p id="para">Already Have an Account <a href="#">Login</a></p>
+                    <div><p id="para">Already Have an Account <a routerLink="/login">Login</a></p>
                         
                     </div>
             </div>
