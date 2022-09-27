@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { LoginPageComponent } from './login-page/login-page.component';
+import {HttpClientModule} from '@angular/common/http';
+import { PageNotComponent } from './page-not/page-not.component';
 
 
 @NgModule({
@@ -15,13 +18,16 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AppComponent,
     LoginComponent,
     ForgetPasswordPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PageNotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    InputTextModule
+    InputTextModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
