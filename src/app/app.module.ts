@@ -7,13 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ForgetPasswordPageComponent
+    ForgetPasswordPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
