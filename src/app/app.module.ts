@@ -13,6 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyComponent } from './verify/verify.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { NewPasswordComponent } from './new-password/new-password.component';
     LoginPageComponent,
     PageNotComponent,
     ResetPasswordComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    SignupComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,

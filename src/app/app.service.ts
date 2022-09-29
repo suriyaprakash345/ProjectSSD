@@ -14,7 +14,11 @@ export class AppService {
   }
 
   register(userDeatils:object) {
-    return this.httpClient.post("http://localhost:3001/register",userDeatils);
+    return this.httpClient.post("http://localhost:3001/signUpData",userDeatils);
+  }
+
+  verifyToken(token:string) {
+    return this.httpClient.post(environment.apiUrl+"/verify",{token});
   }
 
   forget(email:string){
