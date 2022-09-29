@@ -3,6 +3,7 @@
     <div class="row">
 
         <div class="col-6 img-part">
+            <!-- <img src="./../../assets/image/Group 8.svg" alt="logo-white"> -->
             <img src="./assets/image/image_processing20220107-29527-faafhi 1.svg" id="for-img" alt="forget-image">
         </div>
 
@@ -18,16 +19,29 @@
 
             <p id="log">login</p>
 
-            <div class="input-box">
+            <div class="input-box" [formGroup]="userDetails">
+                <div class="form-grp">
+                    <p class="m-0" for="email">Mobile Number or Email</p>
+                    <input type="email" id="email" formControlName="email" pInputText  />
 
-                <label for="email">Mobile Number or Email</label>
-                <input type="email" id="email" required [(ngModel)]="email" #name="ngModel" pInputText />
+                    <div class="error-indicator"
+                        *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
+                        <span class="error-msg" *ngIf="form['email'].errors?.required">Email is required</span>
+                        <span class="error-msg" *ngIf="form['email'].errors?.pattern ">Email is invalid</span>
+                    </div>
+                </div>
+                <div class="form-grp">
 
-                <p *ngIf="name.invalid">error in textbox</p>
+                    <p class="m-0" for="password">Password</p>
+                    <input type="password" id="password" formControlName="password" pInputText />
 
-                <label for="password">Password</label>
-                <input type="password" id="password" [(ngModel)]="password" pInputText />
-
+                    <div class="error-indicator"
+                        *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">
+                        <span class="error-msg" *ngIf="form['password'].errors?.required">Password is required</span>
+                        <!-- <span class="error-msg" *ngIf="form['password'].errors?.minlength">Need 6+ characters</span> -->
+                        <span class="error-msg" *ngIf="form['password'].errors?.pattern">Password is invalid</span>
+                    </div>
+                </div>
             </div>
 
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>

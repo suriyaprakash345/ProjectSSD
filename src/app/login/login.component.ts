@@ -26,14 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   register(){
-    this.userDeatils = {
-      "name":this.name,
-      "email":this.email,
-      "mobile":this.mobile
-    }
-
-   // this.appService.
-
+  
   }
 
 }

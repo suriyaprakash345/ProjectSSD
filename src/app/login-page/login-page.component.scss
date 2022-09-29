@@ -1,16 +1,18 @@
-p {
-  font-size: 12px;
-}
 
-.img-part {
-  background: #2F4BDE;
+.row{
   height: 100vh;
 }
-
-#for-img {
-  margin-top: 150px;
-  width: 100%;
+.img-part {
+  background: #2F4BDE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
 }
+
+// #for-img {
+//   //width: 100%;
+// }
 
 .login-part {
   display: flex;
@@ -38,6 +40,7 @@ p {
 .input-box{
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 label {
@@ -54,7 +57,7 @@ input[type="email"],
 input[type="password"] {
   height: 30px;
   width: 320px;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 }
 
 .btn {
@@ -69,6 +72,7 @@ input[type="password"] {
   padding: 0px 140px;
   margin-bottom:20px ;
 }
+
 .btn p {
     margin-top: 5px;
     margin-bottom: 7px;
@@ -86,4 +90,23 @@ input[type="password"] {
 
 a {
   text-decoration: none;
+}
+
+.error-indicator{
+  font-size: 11px;
+}
+
+
+.error-msg{
+  position: relative;
+  top: 6px;
+  color: red;
+}
+.form-grp {
+  position: relative;
+  margin-bottom: 10px;
+  .error-indicator {
+    position: absolute;
+    bottom: -10px;
+  }
 }
