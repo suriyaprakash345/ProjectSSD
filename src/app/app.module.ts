@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
   
 import { AppRoutingModule } from './app-routing.module';
-<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-=======
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
->>>>>>> 48d0277d13fb2d4c1f206ee5d43ac63810abab1c
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
@@ -39,17 +36,11 @@ import { VerifyComponent } from './verify/verify.component';
     NgbModule,
     InputTextModule,
     FormsModule,
-<<<<<<< HEAD
-    HttpClientModule,
-    ReactiveFormsModule
-    
-    
-=======
     ReactiveFormsModule,
     HttpClientModule
->>>>>>> 48d0277d13fb2d4c1f206ee5d43ac63810abab1c
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
