@@ -15,5 +15,5 @@ export class AppService {
   register(userDeatils:object) {
     //return this.httpClient.post("http://lo")
   }
-
+  pwd(password){}
 }
