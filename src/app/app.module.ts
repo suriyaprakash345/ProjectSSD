@@ -11,6 +11,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotComponent } from './page-not/page-not.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PageNotComponent } from './page-not/page-not.component';
     LoginComponent,
     ForgetPasswordPageComponent,
     LoginPageComponent,
-    PageNotComponent
+    PageNotComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
