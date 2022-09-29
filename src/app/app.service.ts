@@ -22,4 +22,8 @@ export class AppService {
     return this.httpClient.post(environment.apiUrl+'/validateEmail',{email})
   }
 
+  resetPassword(reset:object){
+    return this.httpClient.post(environment.apiUrl+'/valTokenPass',reset)
+  }
+
 }

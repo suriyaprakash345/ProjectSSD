@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
 })
 export class ForgetPasswordPageComponent implements OnInit {
 
-  email:string='';
+  mail:any;
 
   constructor(private appService:AppService) { }
 
@@ -16,8 +16,11 @@ export class ForgetPasswordPageComponent implements OnInit {
   }
 
  forget () {
-  this.appService.forget(this.email).subscribe(data => {
+  console.log(this.mail);
+  
+  this.appService.forget(this.mail).subscribe(data => {
     console.log(data);
   })
  }
+ 
 }

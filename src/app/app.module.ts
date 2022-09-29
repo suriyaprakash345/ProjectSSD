@@ -12,6 +12,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ForgetPasswordPageComponent,
     LoginPageComponent,
     PageNotComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,

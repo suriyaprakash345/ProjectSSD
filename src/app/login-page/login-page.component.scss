@@ -76,12 +76,17 @@ input[type="password"] {
 .btn p {
     margin-top: 5px;
     margin-bottom: 7px;
+    font-size: 12px;
     text-align: center;
     color: #FFFFFF;
     font-size: 12px;
     &:hover{
       color: #2F4BDE;
     }
+}
+
+.p-inputtext:enabled:focus {
+  box-shadow: none;
 }
 
 .for{
@@ -92,15 +97,11 @@ a {
   text-decoration: none;
 }
 
-.error-indicator{
-  font-size: 11px;
-}
-
-
 .error-msg{
   position: relative;
   top: 6px;
   color: red;
+  font-size: 11px;
 }
 .form-grp {
   position: relative;
