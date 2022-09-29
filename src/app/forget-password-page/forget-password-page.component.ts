@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-forget-password-page',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetPasswordPageComponent implements OnInit {
 
-  constructor() { }
+  mail:any;
 
-  ngOnInit(): void {
+  constructor(private appService:AppService) { }
+
+  ngOnInit(): void {  
   }
 
+ forget () {
+  console.log(this.mail);
+  
+  this.appService.forget(this.mail).subscribe(data => {
+    console.log(data);
+  })
+ }
+ 
 }

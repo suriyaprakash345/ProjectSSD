@@ -1,18 +1,15 @@
-
-.row{
-  height: 100vh;
-}
 .img-part {
-  background: #2F4BDE;
+  background-color: #2F4BDE;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
+
 }
 
-// #for-img {
-//   //width: 100%;
-// }
+#for-img {
+  width: 100%;
+  margin-top: 170px;
+}
 
 .login-part {
   display: flex;
@@ -24,7 +21,7 @@
   margin-top: 30px;
 }
 
-.heading{
+.heading {
   margin-top: 45px;
   font-weight: 600;
   font-size: 28px;
@@ -37,7 +34,7 @@
   margin-bottom: 25px;
 }
 
-.input-box{
+.input-box {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -70,26 +67,28 @@ input[type="password"] {
   justify-content: center;
   align-items: center;
   padding: 0px 140px;
-  margin-bottom:20px ;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .btn p {
-    margin-top: 5px;
-    margin-bottom: 7px;
-    font-size: 12px;
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 12px;
-    &:hover{
-      color: #2F4BDE;
-    }
+  margin-top: 5px;
+  margin-bottom: 7px;
+  font-size: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 12px;
+
+  &:hover {
+    color: #2F4BDE;
+  }
 }
 
 .p-inputtext:enabled:focus {
   box-shadow: none;
 }
 
-.for{
+.for {
   margin-right: -200px;
 }
 
@@ -97,15 +96,17 @@ a {
   text-decoration: none;
 }
 
-.error-msg{
+.error-msg {
   position: relative;
   top: 6px;
   color: red;
   font-size: 11px;
 }
+
 .form-grp {
   position: relative;
   margin-bottom: 10px;
+
   .error-indicator {
     position: absolute;
     bottom: -10px;

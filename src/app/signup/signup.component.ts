@@ -3,16 +3,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  email!: string;
-  password!: string;
   userDetails:any;
-  data:any;
 
   constructor(private appService:AppService) { }
 
@@ -23,21 +20,12 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
-
   get form() {
-    return this.userDetails.controls
+    return this.userDetails.controls;
   }
-  
-  login() {
-   
-    console.log(this.userDetails.value);
 
-    this.appService.loign(this.userDetails.value).subscribe(data => {
-      console.log(data);
-      this.data = data
-      if(this.data['flag']) {
-        localStorage.setItem('token',this.data['token']);
-      }
-    })
-   }
+  signup(){
+    this.appService.register(this.userDetails.value).subscribe(data => console.log(data))   
+  }
+
 }
