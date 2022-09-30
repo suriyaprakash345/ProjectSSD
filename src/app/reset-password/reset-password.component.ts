@@ -31,11 +31,11 @@ export class ResetPasswordComponent implements OnInit {
 
   }
 
-  submit(){
-    this.appService.pwd(this.userForm.value).subscribe(data => {
-      console.log(data);
+  // submit(){
+  //   this.appService.pwd(this.userForm.value).subscribe(data => {
+  //     console.log(data);
 
-  })
+  // })
 }
   
  
@@ -43,4 +43,4 @@ export class ResetPasswordComponent implements OnInit {
 
 
 
-}
+
