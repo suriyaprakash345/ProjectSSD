@@ -7,6 +7,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
+import { Login1Component } from './login1/login1.component';
+import { Login2Component } from './login2/login2.component';
+import { Login3Component } from './login3/login3.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -24,6 +27,9 @@ import {ButtonModule} from 'primeng/button';
   declarations: [
     AppComponent,
     LoginComponent,
+    Login1Component,
+    Login2Component,
+    Login3Component,
     ForgetPasswordPageComponent,
     LoginPageComponent,
     PageNotComponent,
@@ -38,7 +44,6 @@ import {ButtonModule} from 'primeng/button';
     NgbModule,
     InputTextModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     ButtonModule
   ],
