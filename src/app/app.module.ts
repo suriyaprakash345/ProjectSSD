@@ -47,6 +47,7 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     HttpClientModule,
     ButtonModule,
+    ReactiveFormsModule,
     TableModule
   ],
   providers: [],
