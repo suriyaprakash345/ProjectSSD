@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 img-part">
+            <img src="./assets/image/image_processing20220107-29527-faafhi 1.svg" id="for-img" alt="forget-image">
+        </div>
+        <div class="col-6">
+
+            <div class="password-part">
+
+                <div class="logo">
+                    <img src="./assets/image/Group 7.svg" alt="logo">
+                </div>
+                <div class="heading">
+                    <p>SET PASSWORD</p>
+                </div>
+
+                <div class="input-box">
+                    <div>
+                        <label for="pass">Password</label><br>
+                        <input type="password" id="pass" placeholder="" name="pass" [(ngModel)]="set.password" required
+                            #pass="ngModel" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})" pInputText />
+
+                        <div class="error-show" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                            <span class="error-type" *ngIf="pass?.errors?.required"> password is required</span>
+                            <span class="error-type" *ngIf="pass.errors?.pattern">Please try strong password</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" pButton label="SUBMIT" [disabled]="pass.invalid && pass.touched"
+                    (click)="setEmpPassword()"></button>
+
+                <div class="back-log">
+                    <a routerLink="/login">Back to Login</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -7,27 +7,39 @@ import { environment } from 'src/environments/environment';
 })
 export class AppService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  loign(userDetails:object) {
-    return this.httpClient.post("http://localhost:3001/loginData",{userDetails})
+  loign(userDetails: object) {
+    return this.httpClient.post("http://localhost:3001/loginData", { userDetails })
   }
 
-  register(userDeatils:object) {
-    return this.httpClient.post("http://localhost:3001/signUpData",userDeatils);
+  register(userDeatils: object) {
+    return this.httpClient.post("http://localhost:3001/signUpData", userDeatils);
   }
 
-  verifyToken(token:string) {
-    return this.httpClient.post(environment.apiUrl+"/verify",{token});
+  verifyToken(token: string) {
+    return this.httpClient.post(environment.apiUrl + "/verify", { token });
   }
 
-  forget(email:string){
+  forget(email: string) {
     console.log(email);
-    return this.httpClient.post(environment.apiUrl+'/validateEmail',{email})
+    return this.httpClient.post(environment.apiUrl + '/validateEmail', { email })
   }
 
-  resetPassword(reset:object){
-    return this.httpClient.post(environment.apiUrl+'/valTokenPass',reset)
+  resetPassword(reset: object) {
+    return this.httpClient.post(environment.apiUrl + '/valTokenPass', reset)
   }
- 
+
+  insertEmp(employee: object) {
+    return this.httpClient.post(environment.apiUrl + '/addEmployee', employee);
+  }
+
+  setPassword(set: object) {
+    return this.httpClient.post(environment.apiUrl + '/valEmpToken', set);
+  }
+
+  empLogin(empDetails: object) {
+    return this.httpClient.post(environment.apiUrl + '/empLogin', empDetails);
+  }
+
 }

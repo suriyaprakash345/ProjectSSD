@@ -34,9 +34,10 @@ export class LoginPageComponent implements OnInit {
    
     console.log(this.userDetails.value);
 
-    this.appService.loign(this.userDetails.value).subscribe(data => {
+    this.appService.loign(this.userDetails.value).subscribe((data:any) => {
 
       this.data = data
+      console.log(data['flag'], 'ssssssssss')
       if(this.data['flag']) {
         localStorage.setItem('token',this.data['token']);
         this.routers.navigate(['users-list'])

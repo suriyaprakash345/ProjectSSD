@@ -1,0 +1,58 @@
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-6 img-part">
+            <!-- <img src="./../../assets/image/Group 8.svg" alt="logo-white"> -->
+            <img src="./assets/image/image_processing20220107-29527-faafhi 1.svg" id="for-img" alt="forget-image">
+        </div>
+
+        <div class="col-6 login-part">
+
+            <div class="logo">
+                <img src="./assets/image/Group 7.svg" alt="logo">
+            </div>
+
+            <div class="heading">
+                <h3>Hello,Welcome</h3>
+            </div>
+
+            <p id="log">login</p>
+
+            <div class="input-box" [formGroup]="empDetails">
+
+                <div class="form-grp">
+                    <p class="m-0" for="email">Email</p>
+                    <input type="email" id="email" formControlName="email" pInputText />
+
+                    <div class="error-indicator"
+                        *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
+                        <span class="error-msg" *ngIf="form['email'].errors?.required">Email is required</span>
+                        <span class="error-msg" *ngIf="form['email'].errors?.pattern ">Email is invalid</span>
+                    </div>
+                </div>
+
+                <div class="form-grp">
+
+                    <p class="m-0" for="password">Password</p>
+                    <input type="password" id="password" formControlName="password" pInputText />
+
+                    <div class="error-indicator"
+                        *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">
+                        <span class="error-msg" *ngIf="form['password'].errors?.required">Password is required</span>
+                        <!-- <span class="error-msg" *ngIf="form['password'].errors?.minlength">Need 6+ characters</span> -->
+                        <span class="error-msg" *ngIf="form['password'].errors?.pattern">Password is invalid</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
+
+            <button pButton class="logBtn" [disabled]="empDetails.invalid && empDetails.touched" type="button"
+                label="LOGIN" (click)="empLogin()"></button>
+
+            <p>Don't have an account? <a routerLink="/register"> Register Now</a></p>
+
+        </div>
+    </div>
+</div>
