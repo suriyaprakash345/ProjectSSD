@@ -21,12 +21,21 @@ export class ResetPasswordComponent implements OnInit {
       createPwd: [null,[Validators.required,Validators.minLength(8)]],
       confirmPwd : [null,[Validators.required]]
     })
+  
 
   }
 
   get form(){
     return this.userForm.controls;
+
   }
+
+  submit(){
+    this.appService.pwd(this.userForm.value).subscribe(data => {
+      console.log(data);
+
+  })
+}
   
  
 
