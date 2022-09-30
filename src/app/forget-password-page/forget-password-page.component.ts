@@ -16,8 +16,7 @@ export class ForgetPasswordPageComponent implements OnInit {
   }
 
  forget () {
-  console.log(this.mail);
-  
+
   this.appService.forget(this.mail).subscribe(data => {
     console.log(data);
   })
