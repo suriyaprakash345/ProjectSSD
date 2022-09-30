@@ -29,5 +29,5 @@ export class AppService {
   resetPassword(reset:object){
     return this.httpClient.post(environment.apiUrl+'/valTokenPass',reset)
   }
-
+  pwd(password){}
 }
