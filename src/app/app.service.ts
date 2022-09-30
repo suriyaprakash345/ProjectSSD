@@ -30,6 +30,6 @@ export class AppService {
     return this.httpClient.post(environment.apiUrl+'/valTokenPass',reset)
   }
   pwd(password:any){
-    return this.httpClient.put(environment.apiUrl+'',)
+    return this.httpClient.put(environment.apiUrl+'',{})
   }
 }
