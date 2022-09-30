@@ -20,9 +20,10 @@
             <p id="log">login</p>
 
             <div class="input-box" [formGroup]="userDetails">
+
                 <div class="form-grp">
                     <p class="m-0" for="email">Mobile Number or Email</p>
-                    <input type="email" id="email" formControlName="email" pInputText  />
+                    <input type="email" id="email" formControlName="email" pInputText />
 
                     <div class="error-indicator"
                         *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
@@ -30,6 +31,7 @@
                         <span class="error-msg" *ngIf="form['email'].errors?.pattern ">Email is invalid</span>
                     </div>
                 </div>
+
                 <div class="form-grp">
 
                     <p class="m-0" for="password">Password</p>
@@ -46,9 +48,8 @@
 
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
 
-            <div class="btn">
-                <p (click)="login()">LOGIN</p>
-            </div>
+            <button pButton class="logBtn" [disabled]="userDetails.invalid && userDetails.touched" type="button"
+                label="LOGIN" (click)="login()"></button>
 
             <p>Don't have an account? <a routerLink="/register"> Register Now</a></p>
 
