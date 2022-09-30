@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
+
+interface user {
+  name:string,
+  email:string,
+  mobile:number
+}
 
 @Component({
   selector: 'app-login',
@@ -7,9 +14,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  email:string='';
+  mobile:number=0;
+  name:string='';
+
+  userDeatils!:user;
+
+  constructor(private appService:AppService) { }
 
   ngOnInit(): void {
+  }
+
+  register(){
+    this.userDeatils = {
+      "name":this.name,
+      "email":this.email,
+      "mobile":this.mobile
+    }
+
+   // this.appService.
+
   }
 
 }
