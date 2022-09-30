@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,22 @@ export class AppService {
   }
 
   register(userDeatils:object) {
-    //return this.httpClient.post("http://lo")
+    return this.httpClient.post("http://localhost:3001/signUpData",userDeatils);
   }
 
+  verifyToken(token:string) {
+    return this.httpClient.post(environment.apiUrl+"/verify",{token});
+  }
+
+  forget(email:string){
+    console.log(email);
+    return this.httpClient.post(environment.apiUrl+'/validateEmail',{email})
+  }
+
+  resetPassword(reset:object){
+    return this.httpClient.post(environment.apiUrl+'/valTokenPass',reset)
+  }
+  pwd(password:any){
+    return this.httpClient.put(environment.apiUrl+'',)
+  }
 }

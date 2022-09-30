@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginComponent } from './login/login.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyComponent } from './verify/verify.component';
 
 const routes: Routes = [
   {
@@ -20,8 +24,20 @@ const routes: Routes = [
     component: ForgetPasswordPageComponent
   },
   {
+    path:'reset-password',
+    component:ResetPasswordComponent
+  },
+  {
+    path:'new-password',
+    component:NewPasswordComponent
+  },
+  {
     path:'register',
-    component:LoginComponent
+    component:SignupComponent
+  },
+  {
+    path:'verify',
+    component:VerifyComponent
   },
   {
     path: '**',

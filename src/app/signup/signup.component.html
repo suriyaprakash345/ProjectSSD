@@ -17,13 +17,12 @@
                 <h3>Hello,Welcome</h3>
             </div>
 
-            <p id="log">login</p>
+            <p id="log">Enter to digital learning</p>
 
             <div class="input-box" [formGroup]="userDetails">
-
                 <div class="form-grp">
-                    <p class="m-0" for="email">Mobile Number or Email</p>
-                    <input type="email" id="email" formControlName="email" pInputText />
+                    <p class="m-0" for="email">Email</p>
+                    <input type="email" id="email" formControlName="email" pInputText  />
 
                     <div class="error-indicator"
                         *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
@@ -31,7 +30,6 @@
                         <span class="error-msg" *ngIf="form['email'].errors?.pattern ">Email is invalid</span>
                     </div>
                 </div>
-
                 <div class="form-grp">
 
                     <p class="m-0" for="password">Password</p>
@@ -40,18 +38,18 @@
                     <div class="error-indicator"
                         *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">
                         <span class="error-msg" *ngIf="form['password'].errors?.required">Password is required</span>
-                        <!-- <span class="error-msg" *ngIf="form['password'].errors?.minlength">Need 6+ characters</span> -->
                         <span class="error-msg" *ngIf="form['password'].errors?.pattern">Password is invalid</span>
                     </div>
                 </div>
             </div>
 
-            <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
+            <!-- <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p> -->
 
-            <button pButton class="logBtn" [disabled]="userDetails.invalid && userDetails.touched" type="button"
-                label="LOGIN" (click)="login()"></button>
+            <div class="btn">
+                <p (click)="signup()">SUBMIT</p>
+            </div>
 
-            <p>Don't have an account? <a routerLink="/register"> Register Now</a></p>
+            <p>Already Have an Account? <a routerLink="/login"> Login</a></p>
 
         </div>
     </div>

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+  
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +15,12 @@ import {InputTextModule} from 'primeng/inputtext';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotComponent } from './page-not/page-not.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
+import { SignupComponent } from './signup/signup.component';
+import { VerifyComponent } from './verify/verify.component';
 import {ButtonModule} from 'primeng/button';
+
 
 
 @NgModule({
@@ -26,7 +32,11 @@ import {ButtonModule} from 'primeng/button';
     Login3Component,
     ForgetPasswordPageComponent,
     LoginPageComponent,
-    PageNotComponent
+    PageNotComponent,
+    ResetPasswordComponent,
+    NewPasswordComponent,
+    SignupComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,
@@ -40,4 +50,5 @@ import {ButtonModule} from 'primeng/button';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
