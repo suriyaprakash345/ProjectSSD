@@ -12,6 +12,7 @@ export class ResetPasswordComponent implements OnInit {
  userForm:any;
  confirmPwd:string='';
  data:any;
+ 
 
 
   constructor(private appService:AppService,private fb:FormBuilder) { }

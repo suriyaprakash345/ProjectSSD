@@ -45,7 +45,8 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
