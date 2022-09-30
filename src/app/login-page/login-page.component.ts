@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { AppService } from '../app.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
+
+
 export class LoginPageComponent implements OnInit {
 
   email!: string;
@@ -14,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   userDetails:any;
   data:any;
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,private routers:Router) { }
 
   ngOnInit(): void {
     this.userDetails = new FormGroup ({
@@ -22,7 +25,6 @@ export class LoginPageComponent implements OnInit {
       password:new FormControl(null,[Validators.required,Validators.minLength(6),Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')])
     })
   }
-
 
   get form() {
     return this.userDetails.controls
@@ -33,10 +35,11 @@ export class LoginPageComponent implements OnInit {
     console.log(this.userDetails.value);
 
     this.appService.loign(this.userDetails.value).subscribe(data => {
-      console.log(data);
+
       this.data = data
       if(this.data['flag']) {
         localStorage.setItem('token',this.data['token']);
+        this.routers.navigate(['users-list'])
       }
     })
    }

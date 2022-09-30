@@ -16,6 +16,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyComponent } from './verify/verify.component';
+import {ButtonModule} from 'primeng/button';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { VerifyComponent } from './verify/verify.component';
     InputTextModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
