@@ -28,6 +28,8 @@ import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
 import {MessageService} from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TooltipModule} from 'primeng/tooltip';
+
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastModule,
     ReactiveFormsModule,
     TableModule,
+    TooltipModule,
     BrowserAnimationsModule
    
   ],

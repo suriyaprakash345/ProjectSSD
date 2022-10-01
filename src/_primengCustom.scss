@@ -1,13 +1,13 @@
 .myLoginToast {
     .p-toast-message-content {
-      padding: 5px !important;
+      padding: 0px !important;
     }
     .p-toast-message-text {
       .p-toast-summary  {
-  
+        font-size: 14px;
       }
       .p-toast-detail  {
-  
+        font-size: 12px;
       }
     }
   }

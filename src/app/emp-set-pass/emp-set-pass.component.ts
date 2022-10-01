@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
 @Component({
@@ -14,24 +15,33 @@ export class EmpSetPassComponent implements OnInit {
     "token": ""
   }
 
-  constructor(private appService: AppService, private aRoute: ActivatedRoute,private routers:Router) { }
+  constructor(private appService: AppService, private aRoute: ActivatedRoute,
+    private routers: Router, private messageService: MessageService) { }
 
   ngOnInit(): void {
+
     this.aRoute.queryParams.subscribe((data: any) => {
-      console.log(data);
       this.set.token = data.token;
     })
   }
 
+  setEmpPassword() {
 
-setEmpPassword(){
-  this.appService.setPassword(this.set).subscribe((data:any) => {
-    console.log(data);
-    if(data.flag)
-      this.routers.navigate(['emp-login']);
-    
-  })
-}
+    this.appService.setPassword(this.set).subscribe((data: any) => {
+
+      if (data.flag) {
+        this.addSingle("success", data.message);
+        this.routers.navigate(['emp-login']);
+        return;
+      }
+
+      this.addSingle("error", data.message);
+    })
+  }
+
+  addSingle(status: string, message: string) {
+    this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
+  }
 
 }
 

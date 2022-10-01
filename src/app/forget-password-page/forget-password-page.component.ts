@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
 @Component({
@@ -8,18 +9,27 @@ import { AppService } from '../app.service';
 })
 export class ForgetPasswordPageComponent implements OnInit {
 
-  mail:any;
+  mail: any;
 
-  constructor(private appService:AppService) { }
+  constructor(private appService: AppService, private messageService: MessageService) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
   }
 
- forget () {
+  forget() {
 
-  this.appService.forget(this.mail).subscribe(data => {
-    console.log(data);
-  })
- }
- 
+    this.appService.forget(this.mail).subscribe((data: any) => {
+      console.log(data);
+
+      if (data.flag) {
+        this.addSingle("success", data.message);
+        return;
+      }
+      this.addSingle("error", data.message);
+    })
+  }
+
+  addSingle(status: string, message: string) {
+    this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
+  }
 }

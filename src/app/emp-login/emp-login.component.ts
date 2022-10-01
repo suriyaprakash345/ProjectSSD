@@ -12,6 +12,10 @@ export class EmpLoginComponent implements OnInit {
 
   empDetails: any;
   message: string = '';
+  passwordToolTip = "At least 8 characters in length Should contain:" +
+             "Lower case letters (a-z)" +
+             "Upper case letters (A-Z)" +
+             "Numbers (i.e. 0-9)";
 
   constructor(private appService: AppService, private messageService: MessageService) { }
 
@@ -27,16 +31,17 @@ export class EmpLoginComponent implements OnInit {
   }
 
   empLogin() {
-      this.addSingle("error", 'test');
-    //   this.appService.empLogin(this.empDetails.value).subscribe((data: any) => {
-    //   if (data.flag) {
-    //     this.addSingle("success", data.message);
-    //     return;
-    //   }
-    // })
+
+      this.appService.empLogin(this.empDetails.value).subscribe((data: any) => {
+      if (data.flag) {
+        this.addSingle("success", data.message);
+        return;
+      }
+      this.addSingle("error",data.message)
+    })
   }
 
   addSingle(status: string, message: string) {
-    this.messageService.add({ severity: status, summary: 'Service Message', detail: message, styleClass: 'myLoginToast',life: 300000 });
+    this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
   }
 }
