@@ -46,9 +46,10 @@
                 </div>
             </div>
 
+
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
 
-            <button pButton class="logBtn" [disabled]="empDetails.invalid && empDetails.touched" type="button"
+            <button pButton class="logBtn" [disabled]="" type="button"
                 label="LOGIN" (click)="empLogin()"></button>
 
             <p>Don't have an account? <a routerLink="/register"> Register Now</a></p>
@@ -56,3 +57,5 @@
         </div>
     </div>
 </div>
+
+<p-toast position="top-center"></p-toast>

@@ -20,12 +20,14 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyComponent } from './verify/verify.component';
+import {ToastModule} from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { AddEmployyeComponent } from './add-employye/add-employye.component';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
-
+import {MessageService} from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -55,10 +57,13 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
     FormsModule,
     HttpClientModule,
     ButtonModule,
+    ToastModule,
     ReactiveFormsModule,
-    TableModule
+    TableModule,
+    BrowserAnimationsModule
+   
   ],
-  providers: [],
+  providers: [ MessageService ],
   bootstrap: [AppComponent]
 })
 
