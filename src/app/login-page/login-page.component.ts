@@ -22,10 +22,10 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.userDetails = new FormGroup({
-    
+
       email: new FormControl(null, [Validators.required,
       Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
-      
+
       password: new FormControl(null, [Validators.required,
       Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')])
     })
@@ -37,6 +37,10 @@ export class LoginPageComponent implements OnInit {
 
   login() {
 
+    if (this.userDetails.invalid) {
+     return this.userDetails.markAllAsTouched();
+    }
+
     this.appService.loign(this.userDetails.value).subscribe((data: any) => {
 
       this.data = data
@@ -44,8 +48,10 @@ export class LoginPageComponent implements OnInit {
       if (this.data['flag']) {
         localStorage.setItem('token', this.data['token']);
         this.addSingle("success", this.data.message);
-        this.routers.navigate(['users-list'])
+        this.routers.navigate(['users-list']);
+        return;
       }
+      this.addSingle("error", this.data.message);
     })
   }
 

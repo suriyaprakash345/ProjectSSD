@@ -29,6 +29,8 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
 import {MessageService} from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TooltipModule} from 'primeng/tooltip';
+import { EmpHomeComponent } from './emp-home/emp-home.component';
+import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
 
 
 
@@ -49,7 +51,9 @@ import {TooltipModule} from 'primeng/tooltip';
     AddEmployyeComponent,
     VerifyEmployeeComponent,
     EmpSetPassComponent,
-    EmpLoginComponent
+    EmpLoginComponent,
+    EmpHomeComponent,
+    EmpBucketListComponent
   ],
   imports: [
     BrowserModule,

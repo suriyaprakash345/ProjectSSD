@@ -1,12 +1,16 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AddEmployyeComponent } from './add-employye/add-employye.component';
 import { AuthGuard } from './auth.guard';
+import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
+import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginComponent } from './login/login.component';
+
 import { Login3Component } from './login3/login3.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';
@@ -59,18 +63,26 @@ const routes: Routes = [
     component: VerifyEmployeeComponent
   },
   {
-    path:'emp-pass',
-    component:EmpSetPassComponent
+    path: 'emp-pass',
+    component: EmpSetPassComponent
   },
   {
-    path:'emp-login',
-    component:EmpLoginComponent
+    path: 'emp-login',
+    component: EmpLoginComponent,
+    children: [{
+      path: 'home',
+      component: EmpHomeComponent,
+      canActivate :[AuthGuard],
+    }, {
+      path: 'list',
+      component: EmpBucketListComponent,
+      canActivate :[AuthGuard],
+    }]
   },
   {
     path: '**',
     component: PageNotComponent
   },
-
 ];
 
 @NgModule({
