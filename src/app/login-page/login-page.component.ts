@@ -38,6 +38,7 @@ export class LoginPageComponent implements OnInit {
   login() {
 
     if (this.userDetails.invalid) {
+     this.addSingle("error","please fill the all fields")
      return this.userDetails.markAllAsTouched();
     }
 
@@ -47,8 +48,10 @@ export class LoginPageComponent implements OnInit {
 
       if (this.data['flag']) {
         localStorage.setItem('token', this.data['token']);
+        localStorage.setItem('roleId',this.data.roleId);
+
         this.addSingle("success", this.data.message);
-        this.routers.navigate(['users-list']);
+        this.routers.navigate(['users-home']);
         return;
       }
       this.addSingle("error", this.data.message);

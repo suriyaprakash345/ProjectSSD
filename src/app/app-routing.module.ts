@@ -16,6 +16,7 @@ import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { VerifyComponent } from './verify/verify.component';
 
@@ -69,15 +70,21 @@ const routes: Routes = [
   {
     path: 'emp-login',
     component: EmpLoginComponent,
-    children: [{
-      path: 'home',
-      component: EmpHomeComponent,
-      canActivate :[AuthGuard],
-    }, {
-      path: 'list',
-      component: EmpBucketListComponent,
-      canActivate :[AuthGuard],
-    }]
+  },
+  {
+    path: 'home',
+    component: EmpHomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'list',
+    component: EmpBucketListComponent,
+    canActivate: [AuthGuard],
+  }, 
+  {
+    path:'users-home',
+    component:UserHomeComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: '**',

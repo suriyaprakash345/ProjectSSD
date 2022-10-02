@@ -20,18 +20,19 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyComponent } from './verify/verify.component';
-import {ToastModule} from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { AddEmployyeComponent } from './add-employye/add-employye.component';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
-import {MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {TooltipModule} from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
 import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
-
+import { UserHomeComponent } from './user-home/user-home.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.compon
     EmpSetPassComponent,
     EmpLoginComponent,
     EmpHomeComponent,
-    EmpBucketListComponent
+    EmpBucketListComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -67,10 +69,11 @@ import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.compon
     ReactiveFormsModule,
     TableModule,
     TooltipModule,
-    BrowserAnimationsModule
-   
+    BrowserAnimationsModule,
+    ProgressSpinnerModule
   ],
-  providers: [ MessageService ],
+
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 

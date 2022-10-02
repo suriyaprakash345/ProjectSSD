@@ -39,7 +39,6 @@ export class SignupComponent implements OnInit {
   }
 
   addSingle(status: string, message: string) {
-    this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
+    this.messageService.add({ severity: status, summary: "MAIL SENT SUCCEESFULLY", detail: message, styleClass: 'myLoginToats' });
   }
-
 }

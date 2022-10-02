@@ -35,6 +35,10 @@ export class EmpLoginComponent implements OnInit {
 
   empLogin() {
 
+    if(this.empDetails.invalid){
+      return this.empDetails.markAllAsTouched();
+    }
+
     this.appService.empLogin(this.empDetails.value).subscribe((data: any) => {
 
       if (data.flag) {
@@ -42,8 +46,8 @@ export class EmpLoginComponent implements OnInit {
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("roleId", data.roleId);
-        
-        this.routes.navigate(['home'],{relativeTo:this.aRoute})
+
+        this.routes.navigate(['/home'])
         return;
       }
       this.addSingle("error", data.message)
