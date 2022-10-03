@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddEmployyeComponent } from './add-employye/add-employye.component';
-import { AuthGuard, AuthUserGuard } from './auth.guard';
+import { AuthEmpLoginGuard, AuthGuard, AuthUserGuard, AuthUserLoginGuard } from './auth.guard';
 import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
 import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
@@ -29,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginPageComponent
+    component: LoginPageComponent,
+    canActivate:[AuthUserLoginGuard]
   },
   {
     path: 'forget-password',
@@ -71,6 +72,7 @@ const routes: Routes = [
   {
     path: 'emp-login',
     component: EmpLoginComponent,
+    canActivate:[AuthEmpLoginGuard]
   },
   {
     path: 'home',

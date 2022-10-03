@@ -9,6 +9,8 @@
 
         <div class="error-indicator" *ngIf="form['name'].invalid && (form['name'].touched || form['name'].dirty)">
             <span class="errors" *ngIf="form['name'].errors?.required">name is required</span>
+            <span class="errors" *ngIf="form['name'].errors?.minlength">minimum 3+ characters needed.</span>
+            <span class="errors" *ngIf="form['name'].errors?.pattern && !form['name'].errors?.minlength">name should be alphabet</span>
         </div>
 
     </div>
@@ -33,6 +35,7 @@
         <div class="error-indicator"
             *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
             <span class="errors" *ngIf="form['contact'].errors?.required">Contact is required</span>
+            <span class="errors" *ngIf="form['contact'].errors?.pattern">Contact must be numeric</span>
         </div>
 
     </div>

@@ -35,6 +35,7 @@ export class NewPasswordComponent implements OnInit {
   resetPassword() {
     this.appService.resetPassword(this.reset).subscribe(data => {
       console.log(data)
+      
       this.result = data
 
       if (this.result.flag){

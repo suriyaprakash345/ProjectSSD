@@ -35,9 +35,9 @@ export class EmpLoginComponent implements OnInit {
 
   empLogin() {
 
-    if(this.empDetails.invalid){
-      return this.empDetails.markAllAsTouched();
-    }
+    // if(this.empDetails.invalid){
+    //   return this.empDetails.markAllAsTouched();
+    // }
 
     this.appService.empLogin(this.empDetails.value).subscribe((data: any) => {
 

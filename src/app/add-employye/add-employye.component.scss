@@ -28,3 +28,7 @@
     width:300px;
     font-size: 12px;
 }
+
+.p-inputtext:enabled:focus {
+    box-shadow: none;
+}
