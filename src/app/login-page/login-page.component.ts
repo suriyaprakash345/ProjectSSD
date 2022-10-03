@@ -37,6 +37,8 @@ export class LoginPageComponent implements OnInit {
 
   login() {
 
+    console.log(this.userDetails);
+    
     if (this.userDetails.invalid) {
      this.addSingle("error","please fill the all fields")
      return this.userDetails.markAllAsTouched();

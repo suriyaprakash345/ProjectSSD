@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddEmployyeComponent } from './add-employye/add-employye.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard, AuthUserGuard } from './auth.guard';
 import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
 import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
@@ -17,6 +17,7 @@ import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { UserGuard } from './user.guard';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { VerifyComponent } from './verify/verify.component';
 
@@ -53,7 +54,7 @@ const routes: Routes = [
   {
     path: 'user-list',
     component: Login3Component,
-    canActivate: [AuthGuard]
+    canActivate: [UserGuard]
   },
   {
     path: 'add-emp',
@@ -84,7 +85,7 @@ const routes: Routes = [
   {
     path:'users-home',
     component:UserHomeComponent,
-    canActivate:[AuthGuard]
+    canActivate:[AuthUserGuard]
   },
   {
     path: '**',

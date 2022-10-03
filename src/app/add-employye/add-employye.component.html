@@ -30,10 +30,11 @@
         <label for="contact">Contact-No</label><br>
         <input type="text" id="contact" pInputText formControlName="contact">
 
-        <div class="error-indicator" *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
+        <div class="error-indicator"
+            *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
             <span class="errors" *ngIf="form['contact'].errors?.required">Contact is required</span>
         </div>
-        
+
     </div>
 
     <div class="location-input form-grp">
@@ -41,14 +42,17 @@
         <label for="location">Location</label><br>
         <input type="text" id="location" pInputText formControlName="location">
 
-        <div class="error-indicator" *ngIf="form['location'].invalid && (form['location'].touched || form['location'].dirty)">
+        <div class="error-indicator"
+            *ngIf="form['location'].invalid && (form['location'].touched || form['location'].dirty)">
             <span class="errors" *ngIf="form['location'].errors?.required">location is required</span>
             <span class="errors" *ngIf="form['location'].errors?.location">location is invalid</span>
         </div>
-        
+
     </div>
 
-    <button pButton class="logBtn" [disabled]="employee.invalid && employee.touched" type="button"
-                label="LOGIN" (click)="insertEmp()" ></button>
+    <button pButton class="logBtn" [disabled]="employee.invalid && employee.touched" type="button" label="LOGIN"
+        (click)="insertEmp()"></button>
 
 </div>
+
+<p-toast position="top-center"></p-toast>
