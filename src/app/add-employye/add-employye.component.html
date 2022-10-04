@@ -36,6 +36,7 @@
             *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
             <span class="errors" *ngIf="form['contact'].errors?.required">Contact is required</span>
             <span class="errors" *ngIf="form['contact'].errors?.pattern">Contact must be numeric</span>
+            <span class="errors" *ngIf="form['contact'].errors?.minlength || form['contact'].errors?.maxlength">Contact number must be 10 digits</span>
         </div>
 
     </div>
@@ -53,7 +54,7 @@
 
     </div>
 
-    <button pButton class="logBtn" [disabled]="employee.invalid && employee.touched" type="button" label="LOGIN"
+    <button pButton class="logBtn" [disabled]="(employee.invalid && employee.touched) || isDisabled" type="button" label="SUBMIT"
         (click)="insertEmp()"></button>
 
 </div>

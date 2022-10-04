@@ -32,7 +32,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate:[AuthUserLoginGuard]
+    canActivate: [AuthUserLoginGuard]
   },
   {
     path: 'forget-password',
@@ -74,7 +74,7 @@ const routes: Routes = [
   {
     path: 'emp-login',
     component: EmpLoginComponent,
-    canActivate:[AuthEmpLoginGuard]
+    canActivate: [AuthEmpLoginGuard]
   },
   {
     path: 'user',
@@ -82,9 +82,9 @@ const routes: Routes = [
   },
 {
 
-     path: 'form',
+    path: 'form',
     component: FormComponent
-},
+  },
   {
     path: 'home',
     component: EmpHomeComponent,
@@ -94,11 +94,11 @@ const routes: Routes = [
     path: 'list',
     component: EmpBucketListComponent,
     canActivate: [AuthGuard],
-  }, 
+  },
   {
-    path:'users-home',
-    component:UserHomeComponent,
-    canActivate:[AuthUserGuard]
+    path: 'users-home',
+    component: UserHomeComponent,
+    canActivate: [AuthUserGuard]
   },
   {
     path: '**',
