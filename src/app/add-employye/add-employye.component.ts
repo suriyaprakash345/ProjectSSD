@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
+
 interface resObj {
   flag:boolean,
   message:string
@@ -11,15 +12,18 @@ interface resObj {
 @Component({
   selector: 'app-add-employye',
   templateUrl: './add-employye.component.html',
-  styleUrls: ['./add-employye.component.scss']
+  styleUrls: ['./add-employye.component.scss'],
+  
 })
 export class AddEmployyeComponent implements OnInit {
 
   employee:any;
+  primengConfig: any;
 
   constructor(private appService:AppService,private messageService:MessageService) { }
 
   ngOnInit(): void {
+    
     this.employee = new FormGroup({
       name:new FormControl(null,[Validators.required,Validators.minLength(3),Validators.pattern(/^[A-Za-z]+$/)]),
       email:new FormControl(null,[Validators.required,Validators.email]),
@@ -43,7 +47,10 @@ export class AddEmployyeComponent implements OnInit {
       }
       this.addSingle("error",data.message);
     })
+   
   }
+  
+
   
   addSingle(status: string, message: string) {
     this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
