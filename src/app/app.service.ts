@@ -64,6 +64,12 @@ delete(id:number){
   return this.httpClient.delete(environments.appurl+"delete?id="+id);
 }
 
+getAllEmp(){
+  return this.httpClient.get(environment.apiUrl+"/getEmp");
+}
 
+sortTable(sortName:string){
+  return this.httpClient.get(environment.apiUrl+"/getSort?sortName="+sortName)
+}
 
 }

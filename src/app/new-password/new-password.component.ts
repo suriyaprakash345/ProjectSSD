@@ -23,7 +23,7 @@ export class NewPasswordComponent implements OnInit {
   }
 
   resetPassword() {
-    this.reset.token = "null";
+   // this.reset.token = "null";
     this.appService.resetPassword(this.reset).subscribe(data => {
       console.log(data)
       

@@ -48,6 +48,10 @@ export class AddEmployyeComponent implements OnInit {
       if (data.flag) {
         this.addSingle("success", data.message);
         this.isDisabled = false;
+        console.log(this.employee);
+        
+        //this.employee.patchValue({"name":"","email":"","contact":"","location":""});
+        this.employee.reset();
         return;
       }
       this.addSingle("error", data.message);
