@@ -1,0 +1,17 @@
+.myLoginToast {
+    .p-toast-message-content {
+      padding: 0px !important;
+    }
+    .p-toast-message-text {
+      .p-toast-summary  {
+        font-size: 14px;
+      }
+      .p-toast-detail  {
+        font-size: 12px;
+      }
+    }
+  }
+
+.p-button-label {
+    font-weight: 500 !important;
+  }

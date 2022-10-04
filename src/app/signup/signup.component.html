@@ -45,12 +45,13 @@
 
             <!-- <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p> -->
 
-            <div class="btn">
-                <p (click)="signup()">SUBMIT</p>
-            </div>
+            <button pButton class="logBtn" [disabled]="userDetails.invalid && userDetails.touched" type="button"
+            label="SUBMIT" (click)="signup()"></button>
 
             <p>Already Have an Account? <a routerLink="/login"> Login</a></p>
 
         </div>
     </div>
 </div>
+
+<p-toast position="top-center"></p-toast>

@@ -64,10 +64,10 @@ input[type="password"] {
   height: 30px;
   width: 320px;
   font-size: 12px;
-  font-family: monsterrat;
+  font-family: 'monsterrat';
   margin-bottom: 20px;
   .p-button-label{
-    font-weight: 500 !important;
+    font-weight: 500;
   }
 }
 
@@ -99,3 +99,5 @@ a {
     bottom: -10px;
   }
 }
+
+

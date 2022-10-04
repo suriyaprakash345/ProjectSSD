@@ -1,0 +1,61 @@
+<div class="employee-form" [formGroup]="employee">
+
+    <h3 style="color:blue">Employee Form </h3>
+
+    <div class="name-input form-grp">
+
+        <label for="name">Name</label><br>
+        <input type="text" id="name" pInputText formControlName="name">
+
+        <div class="error-indicator" *ngIf="form['name'].invalid && (form['name'].touched || form['name'].dirty)">
+            <span class="errors" *ngIf="form['name'].errors?.required">name is required</span>
+            <span class="errors" *ngIf="form['name'].errors?.minlength">minimum 3+ characters needed.</span>
+            <span class="errors" *ngIf="form['name'].errors?.pattern && !form['name'].errors?.minlength">name should be alphabet</span>
+        </div>
+
+    </div>
+
+    <div class="mail-input form-grp">
+
+        <label for="email">Email</label><br>
+        <input type="text" id="email" pInputText formControlName="email">
+
+        <div class="error-indicator" *ngIf="form['email'].invalid && (form['email'].touched || form['email'].dirty)">
+            <span class="errors" *ngIf="form['email'].errors?.required">Email is required</span>
+            <span class="errors" *ngIf="form['email'].errors?.email">Email is invalid</span>
+        </div>
+
+    </div>
+
+    <div class="contact-input form-grp">
+
+        <label for="contact">Contact-No</label><br>
+        <input type="text" id="contact" pInputText formControlName="contact">
+
+        <div class="error-indicator"
+            *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
+            <span class="errors" *ngIf="form['contact'].errors?.required">Contact is required</span>
+            <span class="errors" *ngIf="form['contact'].errors?.pattern">Contact must be numeric</span>
+        </div>
+
+    </div>
+
+    <div class="location-input form-grp">
+
+        <label for="location">Location</label><br>
+        <input type="text" id="location" pInputText formControlName="location">
+
+        <div class="error-indicator"
+            *ngIf="form['location'].invalid && (form['location'].touched || form['location'].dirty)">
+            <span class="errors" *ngIf="form['location'].errors?.required">location is required</span>
+            <span class="errors" *ngIf="form['location'].errors?.location">location is invalid</span>
+        </div>
+
+    </div>
+
+    <button pButton class="logBtn" [disabled]="employee.invalid && employee.touched" type="button" label="LOGIN"
+        (click)="insertEmp()"></button>
+
+</div>
+
+<p-toast position="top-center"></p-toast>
