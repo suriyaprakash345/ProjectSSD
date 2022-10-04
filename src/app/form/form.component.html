@@ -1,0 +1,161 @@
+<!-- <div class="header">
+    {{isUpdate?'Edit User':'Add User'}}
+
+</div>
+
+<div class="forms" [formGroup]="userForm">
+    <p for="name">Name</p>
+    <input type="text" id="name" name="name"  required  [(ngModel)] = "userName"  #name="ngModel" >
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"> 
+    <span style="color: red"></span>
+    name is required
+    </div>
+
+    
+    <label for="email">Email</label>
+    <input type="text" id="email" required [(ngModel)]="userMail" #mail="ngModel" [ngModelOptions]="{standalone:true}"><br><br>
+    <div *ngIf="mail.invalid"><div *ngIf="name.invalid && (name.dirty || name.touched)"> 
+        <span style="color: red"></span>
+        <p style="color: red;">Email is empty</p>
+    </div>
+
+
+    <label for="message">message</label>
+    <input type="text" id="message" [(ngModel)]="userMsg" name="uAdd"><br><br>
+    <button [disabled]="name.invalid" *ngIf="!isUpdate" (click)="addUser()">add User</button>
+    <button *ngIf="isUpdate" (click)="update()">update</button>
+
+</div>  -->
+
+
+
+
+
+
+
+<!-- <div class="login">
+
+   
+    <div class="field">
+        <div for="username2" class="block">Username
+        <input id="username2" type="text" aria-describedby="username2-help" class="ng-invalid ng-dirty"  required minlength="8"  [(ngModel)]="userName"  #username2="ngModel"  pInputText />
+        </div>
+        <div id="username2-help" class="p-error block"  *ngIf = "username2.invalid && (username2.dirty || username2.touched)" style="color:red;">Username is not available
+        </div>  
+    </div>
+   
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div [formGroup]="userForm">
+
+    <div>
+        <label for="name">Name</label>
+        <div>
+            <input type="text" required minlength="4" formControlName="userName" name="name" id="name">
+        </div>
+        <div id="error" *ngIf="forms['userName'].invalid && ( forms['userName'].dirty || forms['userName'].touched )">
+            <div *ngIf="forms['userName'].errors?.required">
+                Name is required
+            </div>
+            <div *ngIf="forms['userName'].errors?.minlength">
+                Name should be length of 4
+            </div>
+        </div>
+
+        <div>
+            <p for="mail">Mail</p>
+            <input type="text" formControlName="userMail" name="email" id="email">
+            <div *ngIf="forms['userMail'].invalid && (forms['userMail'].dirty || forms['userName'].touched)">
+                <div *ngIf="forms['userMail'].errors?.required ">
+                     mail is required</div>
+                <div *ngIf="forms['userMail'].errors?.email ">mail is not found</div>
+            </div>
+        </div>
+
+
+    </div>
+   
+    <div>
+        <label for="msg">msg</label>
+
+        <input type="text" formControlName="userMsg" name="msg" id="msg">
+
+
+    </div>
+
+
+
+    <button *ngIf = "!isUpdate" (click)="addUser()">Add User</button>
+    <button *ngIf = "isUpdate" (click)="update()">Update User</button>
+
+
+
+</div> -->
+
+
+<div class="user-form">
+<!-- 
+    <p>{{ isUpdate? "Edit User" : "Add User" }}</p> -->
+
+  
+<form action="" class="form" [formGroup]="userForm">
+        <h5 id="head" style="text-align:center">CRUD</h5>
+<div class="name-wrapper">
+    <label for="name">Name</label>
+    <div class="error2">
+
+     <input type="text" id="name" name="name"   formControlName="name" pInputText>
+        <div  *ngIf="forms['name'].invalid && (forms['name'].touched || forms['name'].dirty)">
+            <span  *ngIf="forms['name'].errors?.required" style="font-size:15pX">error in input</span>
+            <span *ngIf="forms['name'].errors?.minlength" style="font-size:15pX" >min length of 4</span>
+        </div>
+    </div>
+   
+    
+</div>
+       
+       
+<div>
+    <label for="email">Email</label>
+    <div class="error2">
+        <input type="text" id="email" name="email"  formControlName="Email"pInputText >
+        <span class="firsterror" *ngIf="forms['Email'].invalid && (forms['Email'].touched || forms['Email'].dirty)">
+            <p *ngIf="forms['Email'].errors?.required" style="font-size:15pX" >error in input</p>
+            <p *ngIf="forms['Email'].errors?.email" style="font-size:15pX" >mail is not valid</p>
+        </span>
+    </div>
+</div>
+
+<div>
+
+    <label for="address">message</label>
+    <div>
+        <input type="text" id="message" name="uAdd" required formControlName="msg" pInputText>
+    </div>
+   
+</div>
+
+     
+
+        <button pButton type="button"  *ngIf="!isUpdate" class="Secondary" (click)="formvalid()" [disabled]="userForm.invalid && userForm.touched">add user</button>
+        
+
+        <button *ngIf="isUpdate" (click)="update()">Submit</button>
+    </form>
+</div> 

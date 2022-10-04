@@ -26,7 +26,7 @@ import { AddEmployyeComponent } from './add-employye/add-employye.component';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'primeng/tooltip';
 import { EmpHomeComponent } from './emp-home/emp-home.component';
@@ -34,6 +34,54 @@ import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.compon
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
+import {CardModule} from 'primeng/card';
+
+import {SidebarModule} from 'primeng/sidebar';
+
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+                //api
+
+
+import { FormComponent } from './form/form.component';
+import { ListuserComponent } from './listuser/listuser.component';
+
+
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {TabMenuModule} from 'primeng/tabmenu';
+
+
+const ngx:NgxUiLoaderConfig =
+{
+  "bgsColor": "red",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "ball-spin-clockwise",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "red",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "ball-spin-clockwise",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "red",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+}
 
 @NgModule({
   declarations: [
@@ -55,7 +103,10 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     EmpLoginComponent,
     EmpHomeComponent,
     EmpBucketListComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    FormComponent,
+    ListuserComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -70,10 +121,17 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     TableModule,
     TooltipModule,
     BrowserAnimationsModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    CardModule,
+    AccordionModule,
+    ConfirmDialogModule,
+    SidebarModule,
+    NgxUiLoaderModule.forRoot(ngx),
+    NgxUiLoaderHttpModule.forRoot({showForeground:true}),
+    TabMenuModule
   ],
 
-  providers: [MessageService],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 

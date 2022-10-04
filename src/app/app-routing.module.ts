@@ -21,6 +21,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { UserGuard } from './user.guard';
 import { VerifyEmployeeComponent } from './verify-employee/verify-employee.component';
 import { VerifyComponent } from './verify/verify.component';
+import { FormComponent } from './form/form.component';
+import { ListuserComponent } from './listuser/listuser.component';
 
 const routes: Routes = [
   {
@@ -75,6 +77,18 @@ const routes: Routes = [
     component: EmpLoginComponent,
     canActivate:[AuthEmpLoginGuard]
   },
+  {
+    path: 'user',
+    component: ListuserComponent
+  },
+  {
+    // path: 'card',
+    // component: CardComponent
+  },{
+
+     path: 'form',
+    component: FormComponent
+},
   {
     path: 'home',
     component: EmpHomeComponent,

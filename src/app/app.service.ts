@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { environments } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,26 @@ export class AppService {
   empLogin(empDetails: object) {
     return this.httpClient.post(environment.apiUrl + '/empLogin', empDetails);
   }
+
+addUser(name:{name:string;email:string;message:string}){
+  return this.httpClient.post(environments.appurl+"sql",name);
+
+}
+getUser(){
+  return this.httpClient.get(environments.appurl+"usermessage");
+}
+
+editId(id:number){
+  return this.httpClient.get(environments.appurl+"id?id="+id);
+}
+update(name:{id:number,name:string,mail:string,message:string}){
+  return this.httpClient.put(environments.appurl+"update",name)
+}
+
+delete(id:number){
+  return this.httpClient.delete(environments.appurl+"delete?id="+id);
+}
+
+
 
 }
