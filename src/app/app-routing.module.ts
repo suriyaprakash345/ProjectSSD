@@ -81,10 +81,7 @@ const routes: Routes = [
     path: 'user',
     component: ListuserComponent
   },
-  {
-    // path: 'card',
-    // component: CardComponent
-  },{
+{
 
      path: 'form',
     component: FormComponent
