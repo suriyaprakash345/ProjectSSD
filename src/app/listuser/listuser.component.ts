@@ -65,6 +65,4 @@ if(find != null){
 //     return data.inventoryStatus === 'OUTOFSTOCK';
 // }
 
-
-
   }
