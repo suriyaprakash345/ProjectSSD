@@ -14,11 +14,16 @@ export class EmpSetPassComponent implements OnInit {
     "password": "",
     "token": ""
   }
+  isdisabled:boolean=false;
 
   constructor(private appService: AppService, private aRoute: ActivatedRoute,
     private routers: Router, private messageService: MessageService) { }
 
   ngOnInit(): void {
+  //   this.empDetails = new FormGroup({
+  //     password: new FormControl(null, [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,30})')])
+  //   })
+  // }
 
     this.aRoute.queryParams.subscribe((data: any) => {
       this.set.token = data.token;
@@ -26,6 +31,10 @@ export class EmpSetPassComponent implements OnInit {
   }
 
   setEmpPassword() {
+    // if(this.employee.invalid){
+    //   this.isDisabled=true;
+    //   return this.employee.markAllAsTouched();
+    // }
 
     this.appService.setPassword(this.set).subscribe((data: any) => {
 
