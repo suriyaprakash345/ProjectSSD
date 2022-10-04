@@ -20,6 +20,10 @@ import { NewPasswordComponent } from './new-password/new-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyComponent } from './verify/verify.component';
 import {ButtonModule} from 'primeng/button';
+import { SetPasswordComponent } from './set-password/set-password.component';
+import { FormComponent } from './form/form.component';
+import { CardsComponent } from './cards/cards.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -36,7 +40,11 @@ import {ButtonModule} from 'primeng/button';
     ResetPasswordComponent,
     NewPasswordComponent,
     SignupComponent,
-    VerifyComponent
+    VerifyComponent,
+    SetPasswordComponent,
+    FormComponent,
+    CardsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,8 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     FormsModule,
     HttpClientModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

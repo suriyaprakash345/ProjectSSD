@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerifyComponent } from './verify/verify.component';
 
@@ -24,8 +25,8 @@ const routes: Routes = [
     component: ForgetPasswordPageComponent
   },
   {
-    path:'reset-password',
-    component:ResetPasswordComponent
+    path:'set-password',
+    component:SetPasswordComponent
   },
   {
     path:'new-password',
