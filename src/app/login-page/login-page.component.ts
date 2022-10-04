@@ -15,6 +15,7 @@ export class LoginPageComponent implements OnInit {
 
   userDetails: any;
   data: any;
+  isDisabled:boolean = false;
 
   constructor(private appService: AppService, private routers: Router,
     private messageService: MessageService) { }
@@ -37,6 +38,7 @@ export class LoginPageComponent implements OnInit {
 
   login() {
 
+    this.isDisabled = true ;
     console.log(this.userDetails);
     
     if (this.userDetails.invalid) {
@@ -54,13 +56,17 @@ export class LoginPageComponent implements OnInit {
 
         this.addSingle("success", this.data.message);
         this.routers.navigate(['users-home']);
+        this.isDisabled  = false;
         return;
       }
       this.addSingle("error", this.data.message);
+      this.isDisabled = false;
     })
   }
 
   addSingle(status: string, message: string) {
     this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
   }
+
+ 
 }

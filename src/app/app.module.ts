@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,OnInit} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,8 +33,38 @@ import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-
-
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+const NgxUiLoaderConfig =
+{
+  "bgsColor": "red",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "ball-spin-clockwise",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "red",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "ball-spin",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "red",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +100,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     TableModule,
     TooltipModule,
     BrowserAnimationsModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({showForeground:true})
   ],
 
   providers: [MessageService],
