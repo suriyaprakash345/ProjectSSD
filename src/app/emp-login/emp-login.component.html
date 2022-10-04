@@ -35,7 +35,7 @@
                 <div class="form-grp">
 
                     <p class="m-0" for="password">Password</p>
-                    <input type="password" id="password" formControlName="password" [pTooltip]="passwordToolTip" pInputText />
+                    <input type="password" id="password" formControlName="password" [pTooltip]="passwordToolTip" tooltipStyleClass="tooltip" hideDelay="100000" pInputText />
 
                     <div class="error-indicator"
                         *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">

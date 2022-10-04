@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,OnInit} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -82,7 +82,6 @@ const ngx:NgxUiLoaderConfig =
   "maxTime": -1,
   "minTime": 300
 }
-
 @NgModule({
   declarations: [
     AppComponent,
