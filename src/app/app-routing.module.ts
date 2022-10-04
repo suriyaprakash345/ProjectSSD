@@ -80,7 +80,7 @@ const routes: Routes = [
     path: 'user',
     component: ListuserComponent
   },
-  {
+{
 
     path: 'form',
     component: FormComponent
