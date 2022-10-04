@@ -9,7 +9,6 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { LoginComponent } from './login/login.component';
 
 import { Login3Component } from './login3/login3.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
@@ -81,10 +80,7 @@ const routes: Routes = [
     path: 'user',
     component: ListuserComponent
   },
-  {
-    // path: 'card',
-    // component: CardComponent
-  },{
+{
 
      path: 'form',
     component: FormComponent
@@ -108,6 +104,7 @@ const routes: Routes = [
     path: '**',
     component: PageNotComponent
   },
+  
 ];
 
 @NgModule({
