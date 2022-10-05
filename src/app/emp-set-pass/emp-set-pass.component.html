@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <button type="button" pButton label="SUBMIT" [disabled]="pass.invalid && pass.touched"
+                <button type="button" pButton label="SUBMIT" [disabled]="pass.invalid && pass.touched || isdisabled"
                     (click)="setEmpPassword()"></button>
 
                 <div class="back-log">

@@ -64,12 +64,20 @@ function sendmail(htmlLink, email) {
             }
         });
 
+        
+
+
         message = {
 
             from: "from-example@email.com",
             to: email,
             subject: "Verify email",
-            html: htmlLink
+            html: <div style=""><p>hi,</p>
+            <p>please,verify your mail </p>
+            <p>We'd like to confirm that your account was created successfully. To access you account click the link below to login</p>
+            {/* <a href='http://localhost:4200/" +resDatatoken +"'>
+            <button style=' padding: 8px 12px;font-family: Poppins; width: 200px; height: 36px;' >Click here to login</button></a> */}
+            </div>
         }
 
         transporter.sendMail(message, (err, info) => {

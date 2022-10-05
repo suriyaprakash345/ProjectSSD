@@ -36,10 +36,18 @@ export class AddEmployyeComponent implements OnInit {
   }
 
   confirm() {
+    if(this.employee.invalid){
+      this.isDisabled=true;
+      return this.employee.markAllAsTouched();
+    }
+ 
     this.confirmation.confirm({
+
         message: 'Are you sure that you want to perform this action?',
         accept: () => {
         
+         
+
             this.appService.insertEmp(this.employee.value).subscribe((data: any) => {
               console.log(data);
         
