@@ -118,12 +118,12 @@
         <h5 id="head" style="text-align:center">CRUD</h5>
 <div class="name-wrapper">
     <label for="name">Name</label>
-    <div class="error2">
+    <div >
 
      <input type="text" id="name" name="name"   formControlName="name" pInputText>
         <div  *ngIf="forms['name'].invalid && (forms['name'].touched || forms['name'].dirty)">
-            <span  *ngIf="forms['name'].errors?.required" style="font-size:15pX">error in input</span>
-            <span *ngIf="forms['name'].errors?.minlength" style="font-size:15pX" >min length of 4</span>
+            <span  *ngIf="forms['name'].errors?.required" style="font-size:15pX;color: red;" >error in input</span>
+            <span *ngIf="forms['name'].errors?.minlength" style="font-size:15pX;color: red;" >min length of 4</span>
         </div>
     </div>
    
@@ -131,13 +131,13 @@
 </div>
        
        
-<div>
+<div >
     <label for="email">Email</label>
     <div class="error2">
         <input type="text" id="email" name="email"  formControlName="Email"pInputText >
         <span class="firsterror" *ngIf="forms['Email'].invalid && (forms['Email'].touched || forms['Email'].dirty)">
-            <p *ngIf="forms['Email'].errors?.required" style="font-size:15pX" >error in input</p>
-            <p *ngIf="forms['Email'].errors?.email" style="font-size:15pX" >mail is not valid</p>
+            <p *ngIf="forms['Email'].errors?.required" style="font-size:15pX;color: red;" >error in input</p>
+            <p *ngIf="forms['Email'].errors?.email" style="font-size:15pX;color:red" >mail is not valid</p>
         </span>
     </div>
 </div>

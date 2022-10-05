@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
 interface resObj {
@@ -19,7 +19,7 @@ export class AddEmployyeComponent implements OnInit {
 
   isDisabled = false
 
-  constructor(private appService: AppService, private messageService: MessageService) { }
+  constructor(private appService: AppService, private messageService: MessageService,private confirmation:ConfirmationService) { }
 
   ngOnInit(): void {
     this.employee = new FormGroup({
@@ -35,6 +35,7 @@ export class AddEmployyeComponent implements OnInit {
     return this.employee.controls;
   }
 
+<<<<<<< HEAD
   insertEmp() {
 
     if (this.employee.invalid)
@@ -53,14 +54,33 @@ export class AddEmployyeComponent implements OnInit {
         //this.employee.patchValue({"name":"","email":"","contact":"","location":""});
         this.employee.reset();
         return;
+=======
+  confirm() {
+    this.confirmation.confirm({
+        message: 'Are you sure that you want to perform this action?',
+        accept: () => {
+        
+            this.appService.insertEmp(this.employee.value).subscribe((data: any) => {
+              console.log(data);
+        
+              if (data.flag) {
+                //this.addSingle("success", data.message);
+                this.isDisabled = false;
+                return;
+              }
+              //this.addSingle("error", data.message);
+              this.isDisabled = false;
+            })
+          },
+          reject:()=>{} 
+        
+        })}
+       
+>>>>>>> 6a89b12678104a9bad57cd7a91df9e2cbd2fdde5
       }
-      this.addSingle("error", data.message);
-      this.isDisabled = false;
-    })
-  }
 
-  addSingle(status: string, message: string) {
-    this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
-  }
+  // addSingle(status: string, message: string) {
+  //   this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
+  // }
 
-}
+
