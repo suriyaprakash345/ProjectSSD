@@ -9,7 +9,6 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-
 import { Login3Component } from './login3/login3.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';

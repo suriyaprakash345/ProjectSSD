@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
+
 interface resObj {
   flag: boolean,
   message: string
@@ -11,7 +12,8 @@ interface resObj {
 @Component({
   selector: 'app-add-employye',
   templateUrl: './add-employye.component.html',
-  styleUrls: ['./add-employye.component.scss']
+  styleUrls: ['./add-employye.component.scss'],
+  
 })
 export class AddEmployyeComponent implements OnInit {
 
@@ -22,6 +24,7 @@ export class AddEmployyeComponent implements OnInit {
   constructor(private appService: AppService, private messageService: MessageService,private confirmation:ConfirmationService) { }
 
   ngOnInit(): void {
+    
     this.employee = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
