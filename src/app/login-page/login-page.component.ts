@@ -55,7 +55,7 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('roleId',this.data.roleId);
 
         this.addSingle("success", this.data.message);
-        this.routers.navigate(['users-home']);
+        this.routers.navigate(['add-emp']);
         this.isDisabled  = false;
         return;
       }

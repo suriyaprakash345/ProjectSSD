@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
+interface searchResult {
+  id:number,
+  name:string,
+  email:string,
+  contactNo:string,
+  
+}
+
 @Component({
   selector: 'app-emp-bucket-list',
   templateUrl: './emp-bucket-list.component.html',
@@ -11,7 +19,10 @@ export class EmpBucketListComponent implements OnInit {
   cols: Array<string> = [];
   empsList:any[] = [];
   isSortType=false;
-  sortType:string = "asc"
+  sortType:string = "asc";
+  searchKey:string = '';
+ 
+
 
   constructor(private appService:AppService) { }
 
@@ -26,7 +37,6 @@ export class EmpBucketListComponent implements OnInit {
      this.empsList = res;
      this.cols =Object.keys(res[0]);
      console.log(this.cols);
-      
     })
   }
 
@@ -46,6 +56,15 @@ export class EmpBucketListComponent implements OnInit {
     this.appService.sortTable(col,this.sortType).subscribe((res:any) => {
       console.log(res);
       this.empsList = res;
+    })
+  }
+
+  search(value:any){
+    console.log(value);
+    
+    this.appService.searchList(value.target.value).subscribe((res:any) => {
+      console.log(res);
+      this.empsList=res;
     })
   }
 

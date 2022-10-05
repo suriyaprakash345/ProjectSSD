@@ -72,4 +72,8 @@ sortTable(sortName:string,sortType:string){
   return this.httpClient.get(environment.apiUrl+`/getSort?sortName=${sortName}&&sortType=${sortType}`)
 }
 
+searchList(value:string){
+  return this.httpClient.get(environment.apiUrl+"/searchList?searchEvent="+value);
+}
+
 }

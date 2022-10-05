@@ -1,4 +1,16 @@
-<p-table class="table" styleClass="p-datatable-gridlines" [columns]="cols" [value]="empsList">
+<p-table class="table" styleClass="p-datatable-gridlines" [columns]="cols" [value]="empsList" [paginator]="true"
+    [rows]="10" [showCurrentPageReport]="true">
+
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <!-- <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button> -->
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search" (click)="search(searchKey)"></i>
+                <input pInputText type="text" placeholder="Search keyword" (keyup)="search($event)" />
+            </span>
+        </div>
+    </ng-template>
+
     <ng-template pTemplate="header" class="thead" let-columns>
         <tr>
             <th *ngFor="let col of columns" (click)="sort(col)">
@@ -8,12 +20,20 @@
 
     </ng-template>
 
-    <ng-template pTemplate="body" let-emp let-columns="columns">
-        <tr>
-            <td *ngFor="let col of columns">
-                {{emp[col]}}
-            </td>
-        </tr>
-    </ng-template>
+    
+        <ng-template pTemplate="body" let-emp let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{emp[col]}}
+                </td>
+            </tr>
+        </ng-template>
+
+   
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="5">No search data found.</td>
+            </tr>
+        </ng-template>
 
 </p-table>

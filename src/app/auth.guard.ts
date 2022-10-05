@@ -85,7 +85,7 @@ canActivate(
   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
   if (localStorage.getItem('token') && localStorage.getItem('roleId') == "3") {
-    this.Routers.navigate(['/users-home'])
+    this.Routers.navigate(['/add-emp'])
     return false;
   } else {
     //this.Routers.navigate(['/emp-login']);

@@ -12,7 +12,6 @@
             <span class="errors" *ngIf="form['name'].errors?.minlength">minimum 3+ characters needed.</span>
             <span class="errors" *ngIf="form['name'].errors?.pattern && !form['name'].errors?.minlength">name should be alphabet</span>
         </div>
-
     </div>
 
     <div class="mail-input form-grp">
@@ -24,7 +23,6 @@
             <span class="errors" *ngIf="form['email'].errors?.required">Email is required</span>
             <span class="errors" *ngIf="form['email'].errors?.email">Email is invalid</span>
         </div>
-
     </div>
 
     <div class="contact-input form-grp">

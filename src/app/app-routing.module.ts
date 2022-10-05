@@ -54,7 +54,7 @@ const routes: Routes = [
     path: 'verify',
     component: VerifyComponent
   },
-  {
+  {//this.addSingle("success", data.message);
     path: 'user-list',
     component: Login3Component,
     canActivate: [UserGuard]
@@ -81,19 +81,18 @@ const routes: Routes = [
     component: ListuserComponent
   },
 {
-
     path: 'form',
     component: FormComponent
   },
   {
     path: 'home',
     component: EmpHomeComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthUserGuard],
   },
   {
     path: 'list',
     component: EmpBucketListComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthUserGuard],
   },
   {
     path: 'users-home',

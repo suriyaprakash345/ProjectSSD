@@ -37,7 +37,7 @@ export class AddEmployyeComponent implements OnInit {
 
   confirm() {
     if(this.employee.invalid){
-      this.isDisabled=true;
+
       return this.employee.markAllAsTouched();
     }
  
@@ -46,17 +46,15 @@ export class AddEmployyeComponent implements OnInit {
         message: 'Are you sure that you want to perform this action?',
         accept: () => {
         
-         
-
             this.appService.insertEmp(this.employee.value).subscribe((data: any) => {
               console.log(data);
         
               if (data.flag) {
-                //this.addSingle("success", data.message);
+                this.addSingle("success", data.message);
                 this.isDisabled = false;
                 return;
               }
-              //this.addSingle("error", data.message);
+              this.addSingle("error", data.message);
               this.isDisabled = false;
             })
           },
@@ -64,10 +62,10 @@ export class AddEmployyeComponent implements OnInit {
         
         })}
        
-      }
+      
 
-  // addSingle(status: string, message: string) {
-  //   this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
-  // }
+   addSingle(status: string, message: string) {
+     this.messageService.add({ severity: status, summary: status, detail: message, styleClass: 'myLoginToats' });
+   }
 
-
+  }
