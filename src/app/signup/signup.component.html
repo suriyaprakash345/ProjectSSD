@@ -45,7 +45,7 @@
 
             <!-- <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p> -->
 
-            <button pButton class="logBtn" [disabled]="userDetails.invalid && userDetails.touched" type="button"
+            <button pButton class="logBtn" [disabled]="userDetails.invalid && userDetails.touched || isDisabled" type="button"
             label="SUBMIT" (click)="signup()"></button>
 
             <p>Already Have an Account? <a routerLink="/login"> Login</a></p>

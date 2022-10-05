@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
 export class SignupComponent implements OnInit {
 
   userDetails:any;
-
+  isDisabled:boolean=false;
   constructor(private appService:AppService,private messageService:MessageService) { }
 
   ngOnInit(): void {
@@ -27,7 +27,11 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
+    if(this.userDetails.invalid){
+      this.isDisabled = true;
+      return this.userDetails.markAllAsTouched();
 
+    }
     this.appService.register(this.userDetails.value).subscribe((data:any) => {
       
       if (data.flag){

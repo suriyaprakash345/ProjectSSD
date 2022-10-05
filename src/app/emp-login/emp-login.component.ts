@@ -17,6 +17,7 @@ export class EmpLoginComponent implements OnInit {
     "Lower case letters (a-z)" +
     "Upper case letters (A-Z)" +
     "Numbers (i.e. 0-9)";
+  isdisabled:boolean=false;
 
   constructor(private appService: AppService, private messageService: MessageService,
     private aRoute:ActivatedRoute,private routes:Router) { }
@@ -35,9 +36,11 @@ export class EmpLoginComponent implements OnInit {
 
   empLogin() {
 
-    // if(this.empDetails.invalid){
-    //   return this.empDetails.markAllAsTouched();
-    // }
+    if(this.empDetails.invalid){
+      this.isdisabled = true;
+      return this.empDetails.markAllAsTouched();
+
+    }
 
     this.appService.empLogin(this.empDetails.value).subscribe((data: any) => {
 
