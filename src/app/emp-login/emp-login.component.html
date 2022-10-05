@@ -49,7 +49,7 @@
 
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
 
-            <button pButton class="logBtn" [disabled]="" type="button" label="LOGIN" (click)="empLogin()"></button>
+            <button pButton class="logBtn" [disabled]="isdisabled" type="button" label="LOGIN" (click)="empLogin()"></button>
 
             <p>Don't have an account? <a routerLink="/add-emp"> Register Now</a></p>
 
