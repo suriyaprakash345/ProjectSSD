@@ -1,4 +1,4 @@
-<p-table class="table"  [columns]="cols" [value]="empsList">
+<p-table class="table" styleClass="p-datatable-gridlines" [columns]="cols" [value]="empsList">
     <ng-template pTemplate="header" class="thead" let-columns>
         <tr>
             <th *ngFor="let col of columns" (click)="sort(col)">

@@ -35,26 +35,6 @@ export class AddEmployyeComponent implements OnInit {
     return this.employee.controls;
   }
 
-<<<<<<< HEAD
-  insertEmp() {
-
-    if (this.employee.invalid)
-      return this.employee.markAllAsTouched();
-
-    this.isDisabled = true;
-
-    this.appService.insertEmp(this.employee.value).subscribe((data: any) => {
-      console.log(data);
-
-      if (data.flag) {
-        this.addSingle("success", data.message);
-        this.isDisabled = false;
-        console.log(this.employee);
-        
-        //this.employee.patchValue({"name":"","email":"","contact":"","location":""});
-        this.employee.reset();
-        return;
-=======
   confirm() {
     this.confirmation.confirm({
         message: 'Are you sure that you want to perform this action?',
@@ -76,7 +56,6 @@ export class AddEmployyeComponent implements OnInit {
         
         })}
        
->>>>>>> 6a89b12678104a9bad57cd7a91df9e2cbd2fdde5
       }
 
   // addSingle(status: string, message: string) {

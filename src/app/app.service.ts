@@ -68,8 +68,8 @@ getAllEmp(){
   return this.httpClient.get(environment.apiUrl+"/getEmp");
 }
 
-sortTable(sortName:string){
-  return this.httpClient.get(environment.apiUrl+"/getSort?sortName="+sortName)
+sortTable(sortName:string,sortType:string){
+  return this.httpClient.get(environment.apiUrl+`/getSort?sortName=${sortName}&&sortType=${sortType}`)
 }
 
 }

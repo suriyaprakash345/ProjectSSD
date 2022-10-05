@@ -10,6 +10,8 @@ export class EmpBucketListComponent implements OnInit {
 
   cols: Array<string> = [];
   empsList:any[] = [];
+  isSortType=false;
+  sortType:string = "asc"
 
   constructor(private appService:AppService) { }
 
@@ -30,8 +32,20 @@ export class EmpBucketListComponent implements OnInit {
 
   sort(col:string){
     console.log(`${col} sorting......`);
-    this.appService.sortTable(col).subscribe((res:any) => {
+
+    this.isSortType = !this.isSortType;
+
+    if(this.isSortType)
+      this.sortType = "desc"
+    else
+      this.sortType = 'asc'
+
+    console.log(this.sortType);
+    
+
+    this.appService.sortTable(col,this.sortType).subscribe((res:any) => {
       console.log(res);
+      this.empsList = res;
     })
   }
 
