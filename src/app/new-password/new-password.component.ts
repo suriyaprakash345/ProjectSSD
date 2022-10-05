@@ -3,16 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AppService } from '../app.service';
 
-// interface user {
-//   password:string;
-//   token:string
-// }
-
-// interface result {
-//   flag: boolean,
-//   message: string
-// }
-
 @Component({
   selector: 'app-new-password',
   templateUrl: './new-password.component.html',

@@ -9,8 +9,6 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EmpSetPassComponent } from './emp-set-pass/emp-set-pass.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { LoginComponent } from './login/login.component';
-
 import { Login3Component } from './login3/login3.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { PageNotComponent } from './page-not/page-not.component';
@@ -33,7 +31,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate:[AuthUserLoginGuard]
+    canActivate: [AuthUserLoginGuard]
   },
   {
     path: 'forget-password',
@@ -75,7 +73,7 @@ const routes: Routes = [
   {
     path: 'emp-login',
     component: EmpLoginComponent,
-    canActivate:[AuthEmpLoginGuard]
+    canActivate: [AuthEmpLoginGuard]
   },
   {
     path: 'user',
@@ -83,9 +81,9 @@ const routes: Routes = [
   },
 {
 
-     path: 'form',
+    path: 'form',
     component: FormComponent
-},
+  },
   {
     path: 'home',
     component: EmpHomeComponent,
@@ -95,16 +93,17 @@ const routes: Routes = [
     path: 'list',
     component: EmpBucketListComponent,
     canActivate: [AuthGuard],
-  }, 
+  },
   {
-    path:'users-home',
-    component:UserHomeComponent,
-    canActivate:[AuthUserGuard]
+    path: 'users-home',
+    component: UserHomeComponent,
+    canActivate: [AuthUserGuard]
   },
   {
     path: '**',
     component: PageNotComponent
   },
+  
 ];
 
 @NgModule({

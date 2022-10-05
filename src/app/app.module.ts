@@ -49,6 +49,7 @@ import { ListuserComponent } from './listuser/listuser.component';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { FooterComponent } from './footer/footer.component';
 
 
 const ngx:NgxUiLoaderConfig =
@@ -105,6 +106,7 @@ const ngx:NgxUiLoaderConfig =
     UserHomeComponent,
     FormComponent,
     ListuserComponent,
+    FooterComponent,
 
   ],
   imports: [

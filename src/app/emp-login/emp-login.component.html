@@ -31,11 +31,12 @@
                         <span class="error-msg" *ngIf="form['email'].errors?.pattern ">Email is invalid</span>
                     </div>
                 </div>
-                
+
                 <div class="form-grp">
 
                     <p class="m-0" for="password">Password</p>
-                    <input type="password" id="password" formControlName="password" [pTooltip]="passwordToolTip" tooltipStyleClass="tooltip" hideDelay="100000" pInputText />
+                    <input type="password" id="password" formControlName="password" [pTooltip]="passwordToolTip"
+                        tooltipStyleClass="tooltip" hideDelay="100000" pInputText />
 
                     <div class="error-indicator"
                         *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">
@@ -48,8 +49,7 @@
 
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
 
-            <button pButton class="logBtn" [disabled]="" type="button"
-                label="LOGIN" (click)="empLogin()"></button>
+            <button pButton class="logBtn" [disabled]="" type="button" label="LOGIN" (click)="empLogin()"></button>
 
             <p>Don't have an account? <a routerLink="/add-emp"> Register Now</a></p>
 
