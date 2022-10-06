@@ -38,7 +38,7 @@
                     <input type="password" id="password" formControlName="password" pInputText />
 
                     <div class="error-indicator"
-                        *ngIf="form['password'].invalid && (form['password'].touched|| form['password].dirty'])">
+                        *ngIf="form['password'].invalid && (form['password'].touched|| form['password'].dirty)">
                         <span class="error-msg" *ngIf="form['password'].errors?.required">Password is required</span>
                         <!-- <span class="error-msg" *ngIf="form['password'].errors?.minlength">Need 6+ characters</span> -->
                         <span class="error-msg" *ngIf="form['password'].errors?.pattern">Password is invalid</span>

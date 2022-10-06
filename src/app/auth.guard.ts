@@ -45,7 +45,7 @@ export class AuthUserGuard implements CanActivate {
       return false;
     }
   }
-}
+} 
 
   @Injectable({
     providedIn: 'root'

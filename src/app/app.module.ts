@@ -1,9 +1,8 @@
-import { NgModule,OnInit} from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,7 +13,7 @@ import { Login3Component } from './login3/login3.component';
 import { ForgetPasswordPageComponent } from './forget-password-page/forget-password-page.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PageNotComponent } from './page-not/page-not.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
@@ -33,26 +32,21 @@ import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { EmpBucketListComponent } from './emp-bucket-list/emp-bucket-list.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-
-import {CardModule} from 'primeng/card';
-
-import {SidebarModule} from 'primeng/sidebar';
-
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-                //api
-
-
+import { PaginatorModule } from 'primeng/paginator';
+import { CardModule } from 'primeng/card';
+import { SidebarModule } from 'primeng/sidebar';
+import { AccordionModule } from 'primeng/accordion';     //accordion and accordion tab
 import { FormComponent } from './form/form.component';
 import { ListuserComponent } from './listuser/listuser.component';
-
-
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {TabMenuModule} from 'primeng/tabmenu';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TabMenuModule } from 'primeng/tabmenu';
 import { FooterComponent } from './footer/footer.component';
+import { HttpIntercept } from './http-intercepter';
 
 
-const ngx:NgxUiLoaderConfig =
+
+const ngx: NgxUiLoaderConfig =
 {
   "bgsColor": "red",
   "bgsOpacity": 0.5,
@@ -128,11 +122,16 @@ const ngx:NgxUiLoaderConfig =
     ConfirmDialogModule,
     SidebarModule,
     NgxUiLoaderModule.forRoot(ngx),
-    NgxUiLoaderHttpModule.forRoot({showForeground:true}),
-    TabMenuModule
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    TabMenuModule,
+    PaginatorModule
   ],
 
-  providers: [MessageService,ConfirmationService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpIntercept, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -60,7 +60,8 @@ const routes: Routes = [
   },
   {
     path: 'add-emp',
-    component: AddEmployyeComponent
+    component: AddEmployyeComponent,
+    canActivate: [AuthUserGuard]
   },
   {
     path: 'verify-emp',
