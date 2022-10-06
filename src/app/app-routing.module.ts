@@ -21,6 +21,7 @@ import { VerifyEmployeeComponent } from './verify-employee/verify-employee.compo
 import { VerifyComponent } from './verify/verify.component';
 import { FormComponent } from './form/form.component';
 import { ListuserComponent } from './listuser/listuser.component';
+import { TwoFactorComponent } from './two-factor/two-factor.component';
 
 const routes: Routes = [
   {
@@ -98,6 +99,11 @@ const routes: Routes = [
     path: 'users-home',
     component: UserHomeComponent,
     canActivate: [AuthUserGuard]
+  },
+  {
+    path:"two-factor",
+    component:TwoFactorComponent,
+    canActivate:[AuthUserGuard]
   },
   {
     path: '**',

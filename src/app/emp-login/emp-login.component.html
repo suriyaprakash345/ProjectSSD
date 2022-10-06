@@ -45,11 +45,28 @@
                         <span class="error-msg" *ngIf="form['password'].errors?.pattern">Password is invalid</span>
                     </div>
                 </div>
+
+                <div class="form-grp">
+
+                    <p class="m-0" for="Cpassword">Confirm Password</p>
+                    <input type="password" id="Cpassword" formControlName="confirm-password" [pTooltip]="passwordToolTip"
+                        tooltipStyleClass="tooltip" hideDelay="100000" pInputText />
+
+                    <div class="error-indicator"
+                        *ngIf="form['confirm-password'].invalid && (form['confirm-password'].touched|| form['confirm-password].dirty'])">
+                        <span class="error-msg" *ngIf="form['confirm-password'].errors?.required">Password is required</span>
+                        <!-- <span class="error-msg" *ngIf="form['password'].errors?.minlength">Need 6+ characters</span> -->
+                        <span class="error-msg" *ngIf="form['confirm-password'].errors?.pattern">Password is invalid</span>
+                    </div>
+                </div>
+
+
             </div>
 
             <p class="for"> <a routerLink="/forget-password"> Forget Password? </a> </p>
 
-            <button pButton class="logBtn" [disabled]="isdisabled" type="button" label="LOGIN" (click)="empLogin()"></button>
+            <button pButton class="logBtn" [disabled]="isdisabled" type="button" label="LOGIN"
+                (click)="empLogin()"></button>
 
             <p>Don't have an account? <a routerLink="/add-emp"> Register Now</a></p>
 

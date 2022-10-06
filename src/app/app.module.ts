@@ -43,7 +43,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { FooterComponent } from './footer/footer.component';
 import { HttpIntercept } from './http-intercepter';
-
+import { TwoFactorComponent } from './two-factor/two-factor.component';
+import { environment } from "../environments/environment";
+import { initializeApp } from "firebase/app";
+initializeApp(environment.firebase);
 
 
 const ngx: NgxUiLoaderConfig =
@@ -101,6 +104,8 @@ const ngx: NgxUiLoaderConfig =
     FormComponent,
     ListuserComponent,
     FooterComponent,
+    TwoFactorComponent,
+    
 
   ],
   imports: [
@@ -124,7 +129,7 @@ const ngx: NgxUiLoaderConfig =
     NgxUiLoaderModule.forRoot(ngx),
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     TabMenuModule,
-    PaginatorModule
+    PaginatorModule, 
   ],
 
   providers: [

@@ -36,6 +36,7 @@ export class LoginPageComponent implements OnInit {
     return this.userDetails.controls
   }
 
+
   login() {
     
     this.isDisabled = true ;
@@ -55,7 +56,7 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('roleId',this.data.roleId);
 
         this.addSingle("success", this.data.message);
-        this.routers.navigate(['add-emp']);
+        this.routers.navigate(['two-factor']);
         this.isDisabled  = false;
         return;
       }

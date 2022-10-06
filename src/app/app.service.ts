@@ -84,4 +84,8 @@ export class AppService {
     return this.httpClient.get(environment.apiUrl+`/getSortByPage`);
   }
 
+  verifyAuth(authcode:any) {
+    return this.httpClient.post(environment.apiUrl+'/',{token:authcode})
+  }
+
 }

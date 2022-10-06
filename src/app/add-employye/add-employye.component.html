@@ -34,7 +34,7 @@
             *ngIf="form['contact'].invalid && (form['contact'].touched || form['contact'].dirty)">
             <span class="errors" *ngIf="form['contact'].errors?.required">Contact is required</span>
             <span class="errors" *ngIf="form['contact'].errors?.pattern">Contact must be numeric</span>
-            <span class="errors" *ngIf="form['contact'].errors?.minlength || form['contact'].errors?.maxlength">Contact number must be 10 digits</span>
+            <span class="errors" *ngIf="(form['contact'].errors?.minlength || form['contact'].errors?.maxlength) && !form['contact'].errors?.pattern">Contact number must be 10 digits</span>
         </div>
 
     </div>
@@ -57,7 +57,18 @@
     <button pButton class="logBtn" [disabled]="(employee.invalid && employee.touched) || isDisabled" type="button" label="SUBMIT"
         (click)="confirm()"></button>
 
+    <button pButton (click)="logout()" > logout </button>
+
 </div>
+
+<div *ngIf="message;">
+    <h1>{{ message.notification.title }}</h1>
+    <h2>{{ message.notification.body }}</h2>
+  </div>
+  <div *ngIf="!message;">
+    No Message Arrived
+  </div>
+
 
 
 <p-confirmDialog #cd [style]="{width: '50vw'}">
